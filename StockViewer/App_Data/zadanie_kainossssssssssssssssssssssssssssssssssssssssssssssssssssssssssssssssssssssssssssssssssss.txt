@@ -1,0 +1,13 @@
+Zadanie polega na stworzeniu aplikacji webowej, która będzie pozwalała na:
+
+    Przeglądanie informacji odnośnie kursu giełdowego funduszu inwestycyjnego. Informacja zaprezentowana w formie tabelarycznej oraz w formie wykresu
+    Porównanie zysku związane z ulokowaniem pieniędzy we wskazanym funduszu oraz lokaty oprocentowanej na stały procent w wybranym przez użytkownika okresie czasu
+
+Jednym z zadań do zaimplementowania jest import danych z pliku CSV (link do pliku) do własnej bazy danych. Dane zawierają zestaw dziennych wyników funduszu inwestycyjnego. Plik zawiera trzy kolumny: id, data, wartość.
+
+Na bazie zaimportowanych wartości należy stworzyć podstrony:
+
+    „/” – strona główna, która zaprezentuje wykres zmiany wartości w czasie z możliwością wskazania konkretnego zakresu dat oraz reprezentację danych w formie tabelarycznej
+    „/compare” – strona na której użytkownik będzie miał możliwość porównania zysku (najlepiej w formie wykresu) jaki osiągnąłby w wybranym czasie dla wskazanego funduszu oraz dla standardowej lokaty bankowej w tym samym okresie, której oprocentowanie można podać
+
+Aplikacja powinna być zahostowana w chmurze oraz być publicznie dostępna. Do wersjonowania kodu należy użyć dowolnego serwera git. 

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<StockViewer.Models.StockExchange>
+@{
+    ViewBag.Title = "ShowChart";
+}
+
+<h2>ShowChart</h2>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+
+    google.charts.load('current', {packages: ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {        
+        //Place data from database to array
+        var myArray = [];
+        
+        @foreach(var item in Model)
+        {
+            @:var date = '@Html.DisplayFor(modelItem => item.Date)';
+            @:var dateParts = date.split('-');
+            @:var fixedDate = new Date(dateParts[2], dateParts[1], dateParts[0]);
+            @:myArray.push([fixedDate, parseFloat('@Html.DisplayFor(modelItem => item.StockValue)')]);            
+        }
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('datetime', 'Date');
+        data.addColumn('number', 'Stock Value');
+
+        data.addRows(myArray);
+
+        // Set chart options
+        var options = {
+            'title': 'Stock Exchange Over Time',
+            'width': 1200,
+            'height': 400,
+            curveType: 'function',
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+
+<div id="chart_div"></div>
+
+<p>@Html.ActionLink("Back","Index")</p>
+

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="StockViewerMAB" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Projekty\\StockViewer\\StockViewer\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Projekty\\StockViewer\\StockViewer\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="StockViewerMAB/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Projekty\\StockViewer\\StockViewer\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:stockviewerserver.database.windows.net,1433;Initial Catalog=StockViewerMAB_db;User Id=mabucio@stockviewerserver;Password=Mb131104!" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\Projekty\\StockViewer\\StockViewer\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="StockExchangeContext-Web.config Connection String" description="" value="Data Source=tcp:stockviewerserver.database.windows.net,1433;Initial Catalog=StockViewerMAB_db;User Id=mabucio@stockviewerserver;Password=Mb131104!" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\Projekty\\StockViewer\\StockViewer\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='StockExchangeContext']/@connectionString" />
+  </parameter>
+</parameters>
